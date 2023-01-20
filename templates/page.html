@@ -4,7 +4,13 @@
     <title>Language learning</title>
 </head>
 <body>
-{{printout}}
+{{word_to_translate}}
+
+    <form action="/words" method="POST">
+        Translation:<input type="text" name="users_word">
+          <input type="submit" value="Send">
+    </form>
+{{right_or_wrong}}
 
 
     
