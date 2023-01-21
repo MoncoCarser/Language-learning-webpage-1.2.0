@@ -1,11 +1,12 @@
-from flask import Flask, redirect, render_template, session, request
+from flask import Flask, redirect, render_template, session, request, session
+import os
 
 
 app = Flask(__name__)
 
 words_sv = ["pes", "mačka", "dom", "auto"]
 words_eng = ["dog", "cat", "house", "car"]
-
+SECRET_KEY = os.environ['session_key']
 
 def print_word(value=""):
     if value == "":
