@@ -6,17 +6,21 @@ app = Flask(__name__)
 
 words_sv = ["pes", "mačka", "dom", "auto"]
 words_eng = ["dog", "cat", "house", "car"]
-SECRET_KEY = os.environ['session_key']
+app.secret_key = os.environ['session_key']
 
 def print_word(value=""):
     if value == "":
         index = 0
+        session["latest_slovak_word"] = words_sv[index]
         return words_eng[index]
     # elif 
 
 
-def right_or_wrong():
-    return "Not on the clock yet"
+def right_or_wrong(correct_word, user_answer):
+    if correct_word == user_answer:
+        return "Correct"
+    else:
+        return "Ahaa! A mistake!"
 
 @app.route("/")
 def index():
@@ -26,12 +30,17 @@ def index():
 @app.route("/words", methods=["POST"])
 def word_page():
     word = request.form
-    #if word["users_word"] == 
+    user_answer = word["user_answer"]
+    correct_word = session["latest_slovak_word"]
     return render_template("page.html", 
-                           word_to_translate = print_word()
-                           #right_or_wrong = right_or_wrong()
+                           word_to_translate = print_word(),
+                           correct_or_wrong = right_or_wrong(correct_word, user_answer)
                           )
-    
+
+#need the correct answer ok
+#need the users answer ok
+#need to compare if correct and return correct/wrong ok
+#need to return next word from the list
 
 app.run(host="0.0.0.0", port=81)
 
