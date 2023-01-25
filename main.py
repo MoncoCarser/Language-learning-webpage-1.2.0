@@ -1,48 +1,69 @@
 from flask import Flask, redirect, render_template, session, request, session
 import os
+import functions
 
 
 app = Flask(__name__)
 
-words_sv = ["pes", "mačka", "dom", "auto"]
+words_sv = ["pes", "macka", "dom", "auto"]
 words_eng = ["dog", "cat", "house", "car"]
 app.secret_key = os.environ['session_key']
 
-def print_word(value=""):
-    if value == "":
+def translate_to_slovak(index=""):
+    if index == "":
         index = 0
-        session["latest_slovak_word"] = words_sv[index]
-        return words_eng[index]
-    # elif 
+        eng_word = words_eng[index]
+        sv_word = words_sv[index]
+        return(eng_word, sv_word, index)
+    else: 
+        index = int(index)
+        index += 1
+        eng_word = words_eng[index]
+        sv_word = words_sv[index]
+        return(eng_word, sv_word, index)
+
 
 
 def right_or_wrong(correct_word, user_answer):
     if correct_word == user_answer:
         return "Correct"
     else:
-        return "Ahaa! A mistake!"
+        return "Ahaa! A mistake to learn from!"
+
+
 
 @app.route("/")
 def index():
-     return render_template("page.html", word_to_translate = print_word())
+    words = translate_to_slovak()
+    return render_template("page.html", 
+                                    word_to_translate = words[0], 
+                                    correct_answer = words[1],
+                                    index_follow_up = words[2] )
 
                             
 @app.route("/words", methods=["POST"])
 def word_page():
     word = request.form
     user_answer = word["user_answer"]
-    correct_word = session["latest_slovak_word"]
-    return render_template("page.html", 
-                           word_to_translate = print_word(),
-                           correct_or_wrong = right_or_wrong(correct_word, user_answer)
-                          )
+    correct_word = word["correct_answer"]
+    index = word["index_number"]
+    right_wrong = right_or_wrong(correct_word, user_answer)
 
-#need the correct answer ok
-#need the users answer ok
-#need to compare if correct and return correct/wrong ok
-#need to return next word from the list
+    #True and wrong need to be handled further
+    #if wrong, now it just continues further
+
+    words = translate_to_slovak(index)
+    
+    return render_template("page.html", 
+                            word_to_translate = words[0], 
+                            correct_answer = words[1],
+                            index_follow_up = words[2], 
+                            correct_or_wrong = right_wrong )
+
+
 
 app.run(host="0.0.0.0", port=81)
+
 
 """Extract the common logic of displaying the correct and wrong answers into a separate function. This will make the code more readable and easier to maintain.
 

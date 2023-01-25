@@ -48,19 +48,7 @@ english_words_list = ["I", "you", "he", "she", "it", "we", "you", "they",
 reverse_english_words_list = english_words_list[::-1]
 number_of_english_words = len(english_words_list)
 
-def colour_change(colour):
-    if colour=="red":
-        return ("\033[31m")
-    elif colour=="blue":
-        return ("\033[34m")
-    elif colour=="yellow":
-        return ("\033[33m")
-    elif colour == "green":
-        return ("\033[32m")
-    elif colour == "purple":
-        return ("\033[35m")
-    elif colour=="none":
-        return ("\033[0m")
+
 
 #Subroutines are starting from the beginning of the list, asking item by item, comparing answers with other language list. If wrong, then using reverse list to restart questioning. If wrong, subroutine retarts from first list.
 
