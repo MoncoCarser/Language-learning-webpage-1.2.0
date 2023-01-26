@@ -1,10 +1,11 @@
 # Project Title
 
-One-sentence summary of the project.
+Web page for training words of langauges.
 
 ## Description
 
-A longer, more detailed description of the project and its features.
+Using Flask, Python, and HTML forms user can train words of languages. Word is written down and Python backen checks if word is correct. 
+#More functionality to be added
 
 ## Getting Started
 

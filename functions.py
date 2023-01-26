@@ -1,10 +1,8 @@
 #testing and building for future improvements
 
-words_sv = ["pes", "mačka", "dom", "auto"]
-words_eng = ["dog", "cat", "house", "car"]
 score = 0
 
-slovak_words_list = ["ja", "ty", "on", "ona", "ono", "my", "vy", "oni / ony",
+words_sv = ["ja", "ty", "on", "ona", "ono", "my", "vy", "oni / ony",
                      "co", "kto", "kde", "preco", "ako", "ktory", "kedy",
                      "potom", "ak", "naozaj", "ale", "pretoze", "nie",
                      "toto", "to", "vsetko", "alebo", "a", "vediet",
@@ -23,9 +21,8 @@ slovak_words_list = ["ja", "ty", "on", "ona", "ono", "my", "vy", "oni / ony",
                      "tyzden", "mesiac", "rok", "vecer", 
                       ]
 
-reverse_slovak_words_list = slovak_words_list[::-1]
 
-english_words_list = ["I", "you", "he", "she", "it", "we", "you", "they",
+words_eng = ["I", "you", "he", "she", "it", "we", "you", "they",
                       "what", "who","where", "why", "how", "which", "when",
                       "then", "if", "really", "but", "because", "not", "this",
                       "that", "all", "or", "and", "to know", "to think",
@@ -42,8 +39,52 @@ english_words_list = ["I", "you", "he", "she", "it", "we", "you", "they",
                       "second", "day", "week", "month", "year", "evening",
                       ]
 
-reverse_english_words_list = english_words_list[::-1]
 
+
+def translate_to_slovak_from_start(index=""):
+
+    #Right now code does not react accordingly to reaching maximum index
+    if index == "":
+        index = 0
+        #need to add a WIN option when all words are cleared
+        eng_word = words_eng[index]
+        sv_word = words_sv[index]
+        return(eng_word, sv_word, index)
+    else: 
+        index = int(index)
+        index += 1
+        eng_word = words_eng[index]
+        sv_word = words_sv[index]
+        return(eng_word, sv_word, index)
+
+
+
+def translate_to_slovak_from_end(index=""):
+    if index == "":
+        index = len(words_sv) -1
+        eng_word = words_eng[index]
+        sv_word = words_sv[index]
+        return(eng_word, sv_word, index)
+    else: 
+        index = int(index)
+        index -= 1
+        eng_word = words_eng[index]
+        sv_word = words_sv[index]
+        return(eng_word, sv_word, index)
+
+
+
+def right_or_wrong(correct_word, user_answer):
+    if correct_word == user_answer:
+        return ("Correct")
+    else:
+        return ("Ahaa! A mistake to learn from!")
+
+#mistakes need to be saved so those can be returned to
+
+
+
+"""
 
 def asking_for_slovak_words():
     for i in range(len(english_words_list)):
@@ -71,3 +112,5 @@ def shuffle_questions():
         correct = ask_question(f"What is Slovak for {english}: ", slovak)
         if correct:
             score += 1
+            
+            """
