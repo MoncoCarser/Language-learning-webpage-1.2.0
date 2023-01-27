@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Slovak learning</title>
+    <title>Swedish learning</title>
 </head>
 <body>
 {{word_to_translate}}
 
-    <form action="/slovak_words" method="POST">
+    <form action="/swedish_words" method="POST">
         Translation:<input type="text" name="user_answer" autofocus required>
          <input type="hidden" name="correct_answer" value={{correct_answer}}>
          <input type="hidden" name="index_number" value={{index_follow_up}}>
@@ -16,11 +16,11 @@
 
 
 
-    <form action="/slovak_words_rev" method="POST">
+    <form action="/swedish_words_rev" method="POST">
          <input type="hidden" name="correct_answer" value="">
          <input type="hidden" name="index_number" value="">
          <input type="hidden" name="user_answer" value="">
-          <input type="submit" value="Slovak words <-">
+          <input type="submit" value="Swedish words <-">
     </form>
     
 </body>

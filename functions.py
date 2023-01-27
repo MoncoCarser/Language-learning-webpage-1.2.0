@@ -1,6 +1,3 @@
-#testing and building for future improvements
-
-score = 0
 
 words_sv = ["ja", "ty", "on", "ona", "ono", "my", "vy", "oni / ony",
                      "co", "kto", "kde", "preco", "ako", "ktory", "kedy",
@@ -20,7 +17,6 @@ words_sv = ["ja", "ty", "on", "ona", "ono", "my", "vy", "oni / ony",
                      "prosim", "teraz", "hodina", "minuta", "sekunda", "den",
                      "tyzden", "mesiac", "rok", "vecer", 
                       ]
-
 
 words_eng = ["I", "you", "he", "she", "it", "we", "you", "they",
                       "what", "who","where", "why", "how", "which", "when",
@@ -80,37 +76,85 @@ def right_or_wrong(correct_word, user_answer):
     else:
         return ("Ahaa! A mistake to learn from!")
 
+#Mistake should include correct translation
 #mistakes need to be saved so those can be returned to
 
 
 
-"""
+swe_words = ["vecka", "år", "idag", "imorgon", "igår",
+             "kalender", "sekund", "timme", "minut", "klockan",
+             "klocka", "en timme", "kan", "använda", "göra",
+             "gå", "komma", "skratta", "göra", "se",
+             "långt", "liten", "bra", "vacker", "ful",
+             "svår", "lätt", "dålig", "nära", "Trevligt att träffas",
+             "hej", "god morgon", "goddag"," god kväll",
+             "godnatt", "Hur mår du?", "tack", "nej", "utsökt",
+             "jag är", "hej då", "ja", "måndag", "tisdag",
+             "onsdag", "torsdag", "fredag", "lördag", "söndag",
+             "maj", "januari", "februari", "mars", "april",
+             "juni", "juli", "augusti", "september", "oktober",
+             "november", "december", "noll", "ett / en", "två",
+             "tre", "fyre", "fem", "sex", "sju",
+             "åtta", "nio", "tio", "coffee", "öl",
+             "té", "vin", "vatten", "biff", "fläsk",
+             "kyckling", "lamm", "fisk", "fot", "ben",
+             "huvud", "arm", "hand", "finger", "kropp",
+             "mage", "rygg", "bröst", "sjuksköterska", "anställd",
+             "poliskonstapel", "kock", "ingenjör", "doktor", "föreståndare",
+             "lärare", "programmerare", "försäljare", "snälla"
+            ]
 
-def asking_for_slovak_words():
-    for i in range(len(english_words_list)):
-        answer_to_question_SK = english_words_list[i]
-        if answer_to_question_SK == slovak_words_list[i]:
-            print("Correct")
-            continue
-        else:
-            print(f"Wrong {slovak_words_list[i]}")
-            asking_reverse_slovak_words()
+eng_swe_words = ["week", "year", "today", "tomorrow", "yesterday",
+                 "calendar", "second", "hour", "minute", "o'clock",
+                 "clock", "one hour", "can", "use",
+                 "do", "go", "come", "laugh", "make",
+                 "see", "far", "small", "good", "beautiful",
+                 "ugly", "difficult", "easy", "bad", "near",
+                 "Nice to meet you", "hello", "good morning","good afternoon",
+                 "good evening", "good night", "How are you?", "thank you", "no",
+                 "delicious", "I'm..", "goodbye", "yes", "Monday",
+                 "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+                 "Sunday", "May", "January", "February", "March",
+                 "April", "June", "July", "August", "September",
+                 "October", "November", "December", "zero", "one",
+                 "two", "three", "four", "five", "six",
+                 "seven", "eight","nine", "ten", "coffee",
+                 "beer", "tea", "wine", "water", "beef",
+                 "pork", "chicken", "lamb", "fish", "foot",
+                 "leg", "head", "arm", "hand", "finger",
+                 "body", "stomach", "back", "chest", "nurse",
+                 "employee", "police officer", "cook", "engineer",
+                 "doctor", "manager", "teacher", "programmer", "salesman", "please"
+                ]
+
+def translate_to_swedish_from_start(index=""):
+
+    #Right now code does not react accordingly to reaching maximum index
+    
+    if index == "":
+        index = 0
+        #need to add a WIN option when all words are cleared
+        eng_word = eng_swe_words[index]
+        swe_word = swe_words[index]
+        return(eng_word, swe_word, index)
+    else: 
+        index = int(index)
+        index += 1
+        eng_word = eng_swe_words[index]
+        swe_word = swe_words[index]
+        return(eng_word, swe_word, index)
 
 
-def ask_question(question, correct_answer):
-    answer = input(question)
-    if answer.lower() == correct_answer.lower():
-        print("Correct")
-        return True
-    else:
-        print(f"Wrong. Right answer is {correct_answer}")
-        return False
 
-def shuffle_questions():
-    #random.shuffle(words)
-    for index, (english, slovak) in enumerate(words):
-        correct = ask_question(f"What is Slovak for {english}: ", slovak)
-        if correct:
-            score += 1
-            
-            """
+def translate_to_swedish_from_end(index=""):
+    if index == "":
+        index = len(words_sv) -1
+        eng_word = eng_swe_words[index]
+        swe_word = swe_words[index]
+        return(eng_word, swe_word, index)
+    else: 
+        index = int(index)
+        index -= 1
+        eng_word = eng_swe_words[index]
+        swe_word = swe_words[index]
+        return(eng_word, swe_word, index)
