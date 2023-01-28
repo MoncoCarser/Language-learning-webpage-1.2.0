@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spanish learning</title>
+</head>
+<body>
+{{word_to_translate}}
+
+    <form action="/spanish_words_rev" method="POST">
+        Translation:<input type="text" name="user_answer" autofocus required>
+         <input type="hidden" name="correct_answer" value={{correct_answer}}>
+         <input type="hidden" name="index_number" value={{index_follow_up}}>
+          <input type="submit" value="Send">
+    </form>
+{{correct_or_wrong}}
+
+
+
+    <form action="/spanish_words" method="POST">
+         <input type="hidden" name="correct_answer" value="">
+         <input type="hidden" name="index_number" value="">
+         <input type="hidden" name="user_answer" value="">
+          <input type="submit" value="Spanish words ->">
+    </form>
+
+    
+</body>
+</html>
