@@ -70,6 +70,8 @@ def translate_to_slovak_from_end(index=""):
 
 
 
+
+
 def right_or_wrong(correct_word, user_answer):
     if correct_word == user_answer:
         return ("Correct")
@@ -165,8 +167,8 @@ def translate_to_swedish_from_end(index=""):
 
 
 
-spanish_words = ["hola", "buenas", "buenos días", "buenas tardes", "buenas noches",
-                 "chao / adios", "hasta luego", "hasta pronto", "hasta mañana", "nos vemos",
+spanish_words = ["hola", "testi lauseke", "buenas", "buenos dias", "buenas tardes", "buenas noches",
+                 "chao", "adios", "hasta luego", "hasta pronto", "hasta mañana", "nos vemos",
                  "Que tengas un buen día", "por favor", "gracias", "muchas gracias", "de nada", 
                  "con permiso", "disculpe / perdón", "me llamo", "Mi nombre es..",
                  "Cúal es tu nombre?", "Cómo te llamas?", "mucho gusto", "igualmente",
@@ -174,7 +176,7 @@ spanish_words = ["hola", "buenas", "buenos días", "buenas tardes", "buenas noch
                  "a qué hora?", "Cómo estás?", "Qué tal?", "Como te va?", "Como te vas?",
                  "Qué pasa", "Estoy bien", "Estoy mal", "De dónde eres?", "Soy de..",
                  "Lost Estados Unidos", "China", "Japón", "Alemania", "Francia",
-                 "Inglaterra", "Polonia", "una / o", "dos", "tres", "quatro", "cinco",
+                 "Inglaterra", "Polonia", "uno", "dos", "tres", "quatro", "cinco",
                  "seis", "siete", "ocho", "nueve", "diez", "viente", "treinta",
                  "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa",
                  "cien", "la tienda", "Dónde está la tienda?", "Me gusta..", "Esta camisa",
@@ -197,7 +199,7 @@ spanish_words = ["hola", "buenas", "buenos días", "buenas tardes", "buenas noch
 
 
 spanish_eng_words = ["hello", "hi", "good morning", "good afternoon", "good night",
-                     "goodbye", "see you later", "see you soon", "see you tomorrow", "see you",
+                     "goodbye", "goodbye", "see you later", "see you soon", "see you tomorrow", "see you",
                      "Have a great day", "please", "thank you", "thank you very much", "you're welcome", "excuse me", 
                      "sorry", "My name is..", "My name is..", "What is your name?", "What is your name?",
                      "Nice to meet you", "likewise", "who?", "what?", "where?", "when?",

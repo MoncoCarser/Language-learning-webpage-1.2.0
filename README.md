@@ -1,6 +1,6 @@
 # Project Title
 
-Web page for training words of langauges.
+Web page for training words of languages.
 
 ## Description
 
@@ -11,17 +11,25 @@ Using Flask, Python, and HTML forms user can train words of languages. Word is w
 
 Instructions on how to set up the project on a local machine for development and testing purposes.
 
+N/A at current level.
+
 ### Prerequisites
 
 A list of necessary tools and dependencies to run the project.
+
+N/A at current level.
 
 ### Installing
 
 Step-by-step instructions on how to install and set up the project.
 
+N/A at current level.
+
 ## Usage
 
 Examples of how to use the project and its features.
+
+N/A at current level.
 
 ## Contributing
 
