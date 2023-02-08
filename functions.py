@@ -167,7 +167,7 @@ def translate_to_swedish_from_end(index=""):
 
 
 
-spanish_words = ["hola", "testi lauseke", "buenas", "buenos dias", "buenas tardes", "buenas noches",
+spanish_words = ["hola", "buenas", "buenos dias", "buenas tardes", "buenas noches",
                  "chao", "adios", "hasta luego", "hasta pronto", "hasta mañana", "nos vemos",
                  "Que tengas un buen día", "por favor", "gracias", "muchas gracias", "de nada", 
                  "con permiso", "disculpe / perdón", "me llamo", "Mi nombre es..",
