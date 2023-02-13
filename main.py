@@ -7,7 +7,7 @@ spanish_list = (
               )
 
 
-print(spanish_list[1][0])
+#print(spanish_list[1][0])
 
 #function to get a word from the list
 def spanish_eng_translation(start=True, index=""):
@@ -67,8 +67,27 @@ def check_answer(correct_word, user_answer):
         return ("Ahaa! A mistake to learn from!")
 
 #user is asked a word
-    answer = input(f"Translate: {spanish_eng_translation(True, '')}")
-    print(answer)
+index = ""
+answer_and_index = spanish_eng_translation(True, '')
+answer = input(f"Translate: {answer_and_index[0]}\n")
+print(answer)
+
+for index in range(len())
+
+"""index = 0
+while True:
+    if answer == answer_and_index[1]:
+        print("Es correcto")
+        while True:
+            answer_and_index = spanish_eng_translation(True, index)
+            answer = input(f"Translate: {answer_and_index[0]}\n")
+            if answer == answer_and_index[1]:
+                print("Es correcto")
+                index += 1
+
+    else: 
+        print("Eeeeee")"""
+        
         
 
 #user gives answer
