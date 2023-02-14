@@ -10,7 +10,7 @@ spanish_list = (
 #print(spanish_list[1][0])
 
 #function to get a word from the list
-def spanish_eng_translation(start=True, index=""):
+def spanish_eng_translation(start=True, index=""): #index has to start at 0 so calling it later is easier
         if start:
             if index == "":
                 index = 0
@@ -67,12 +67,11 @@ def check_answer(correct_word, user_answer):
         return ("Ahaa! A mistake to learn from!")
 
 #user is asked a word
-index = ""
-answer_and_index = spanish_eng_translation(True, '')
-answer = input(f"Translate: {answer_and_index[0]}\n")
-print(answer)
+index = 0
+while True:
+    print(spanish_eng_translation(True, index))
+    index += 1
 
-for index in range(len())
 
 """index = 0
 while True:
